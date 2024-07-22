@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t mehdifadli/jenkin-docker:$BUILD_NUMBER .'
+                sh 'docker build -t mehdifadli/jenkins-docker:$BUILD_NUMBER .'
             }
         }
         stage('Login to Docker Hub') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Push image') {
             steps {
-                sh 'docker push mehdifadli/jenkin-docker:$BUILD_NUMBER'
+                sh 'docker push mehdifadli/jenkins-docker:$BUILD_NUMBER'
             }
         }
     }
